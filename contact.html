@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Jerin's Mehendi Art</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Page-scoped: make header/nav links bold black on contact page */
+    .nav a, .nav-links a, .navbar .nav-links a { color: #000 !important; font-weight: 700 !important; }
+    .nav-toggle { color: #000 !important; }
+  </style>
+</head>
+<body>
+ <header class="site-header">
+    <nav class="navbar">
+      <div class="logo">
+        <img src="assets/images/Jerin's Mehendi Art Mandala Design.png" alt="Jerin’s Mehendi Art Logo" />
+      </div>
+      <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="faq.html" >FAQ</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+        
+    </ul>
+    </nav>
+  </header>
+
+<section class="hero-faq">
+    <h1>Request to Book</h1>
+    <p>We’d love to be part of your special occasion. Fill in the details below to send your booking request.</p>
+  </section>
+
+  <!-- Header -->
+  <section class="contact-form-section">
+    <form id="bookingForm" class="booking-form" >
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Name:</label>
+          <input type="text" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="email" name="email" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Phone:</label>
+          <input type="tel" name="phone" required>
+        </div>
+
+        <div class="form-group">
+          <label>Address:</label>
+          <input type="text" name="address" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Date of Mehendi Programme:</label>
+          <input type="date" name="date" required>
+        </div>
+
+        <div class="form-group">
+          <label>Type of Booking:</label>
+          <select id="bookingType" name="bookingType" required>
+            <option value="">-- Select Type --</option>
+            <option value="bridal">Bridal</option>
+            <option value="semi-bridal">Semi-Bridal</option>
+            <option value="party">Party</option>
+            <option value="simple">Simple</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Dynamic Package Question -->
+      <div class="form-group" id="packageSection" style="display: none;">
+        <label>Select Package:</label>
+        <select id="packageOptions" name="package"></select>
+      </div>
+
+      <div class="form-group">
+        <label>How would you like to customize your henna? Tell us your story!</label>
+        <textarea name="message" rows="4" placeholder="Write your message..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Send Request</button>
+      <p id="successMsg" class="success-msg" style="display:none;">✅ Request sent successfully!</p>
+    </form>
+  </section>
+
+  
+
+
+    <footer class="site-footer">
+    <div class="footer-top container">
+      <div class="footer-col">
+        <h4>Additional Links</h4>
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Henna#Black_henna">Learn about black henna</a></li>
+          <li><a href="https://www.facebook.com/share/1BNhRHq2Fv/">Read more testimonials</a></li>
+          <li><a href="#">How do I take care of my henna?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col center-logo">
+        <img src="assets/images/logo black.png" alt="logo" class="logo-footer">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/1BNhRHq2Fv/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/jerins_mehendi_art?igsh=MXVxdG0wYTRteTBtNQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/yourpage" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://twitter.com/yourpage" target="_blank"><i class="fab fa-linkedin"></i></a>
+       </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Contact</h4>
+        <p><i class="fa-solid fa-location-dot"></i> Tangail, Dhaka, Bangladesh</p>
+        <p><i class="fa-solid fa-phone"></i> +8801874556527</p>
+        <p><i class="fa-solid fa-envelope"></i> jerinsmehendiart@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Jerin’s Mehendi Art</p>
+    </div>
+  </footer>
+
+
+  <script src="assets/js/main.js"></script>
+  <script>
+  const form = document.getElementById("bookingForm");
+
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault(); // Prevent default form submission
+
+    // Collect form data
+    const formData = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const response = await fetch("http://localhost:3000/send-mail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert("✅ Booking request sent successfully!");
+        form.reset(); // Clear the form
+      } else {
+        alert("❌ Failed to send email. Please try again later.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("⚠️ Error connecting to server.");
+    }
+  });
+</script>
+
+</body>
+</html>

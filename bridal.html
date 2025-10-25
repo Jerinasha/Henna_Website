@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bridal Details | Jerin’s Mehendi Art</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<header class="site-header">
+     <nav class="navbar">
+      <div class="logo">
+        <img src="assets/images/Jerin's Mehendi Art Mandala Design.png" alt="Jerin’s Mehendi Art Logo" />
+      </div>
+      <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="faq.html" >FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+        
+    </ul>
+    </nav>
+
+  </header>
+<body>
+
+
+
+<section class="hero-faq">
+    <h1>Bridal Packages</h1>
+    
+  </section>
+  
+
+  <section class="detail-grid">
+    <div class="service-card">
+      <img src="assets/images/bridal aura.jpg" alt="Bridal Aura">
+    <div class="overlay">
+      <h3>Bridal Aura</h3>
+      <p>For the bride who shines brightest — detailed designs with royal finesse.</p>
+      <i class="fa-solid fa-magnifying-glass" onclick="openLightbox('assets/images/bridal-aura.jpg', 'Bridal Aura', 'For the bride who shines brightest — detailed designs with royal finesse.')"></i>
+    </div>
+    </div>
+
+    <div class="service-card">
+      <img src="assets/images/sajawat.jpg" alt="Sajawat">
+    <div class="overlay">
+      <h3>Sajawat</h3>
+      <p>Traditional florals crafted to adorn your hands with artistic celebration.</p>
+      <i class="fa-solid fa-magnifying-glass" onclick="openLightbox('assets/images/sajawat.jpg', 'Sajawat', 'Traditional florals crafted to adorn your hands with artistic celebration.')"></i>
+    </div>
+    </div>
+
+    <div class="service-card">
+      <img src="assets/images/vine mandala.jpg" alt="Vine Mandala">
+    <div class="overlay">
+      <h3>Vine Mandala</h3>
+      <p>Twining vines meet circular art, expressing grace and natural flow.</p>
+      <i class="fa-solid fa-magnifying-glass" onclick="openLightbox('assets/images/vine-mandala.jpg', 'Vine Mandala', 'Twining vines meet circular art, expressing grace and natural flow.')"></i>
+    </div>
+    </div>
+
+    
+  </section>
+
+  <!-- Pricing -->
+  
+</section>
+
+  <!-- Three stacked cards -->
+   <section class="three-column container">
+    <div class="card">
+      <h4>Custom Bridal Consultation</h4>
+      <p>Personalized design planning to match your outfit, ceremony, and personal style. Includes a short trial sketch and motif selection.</p>
+    </div>
+    <div class="card">
+      <h4>On-site Application</h4>
+      <p>Professional setup and application at your venue, with a punctual team ready to work through the schedule.</p>
+    </div>
+    <div class="card">
+      <h4>Aftercare Tips</h4>
+      <p>Clear instructions to help your mehendi stain darker and last longer, including natural remedies and precautions.</p>
+    </div>
+  </section>
+  
+ <section class="pricing-section container">
+  <h2 class="section-title">Bridal Packages & Pricing</h2>
+  <p class="section-subtitle">Choose the perfect package that complements your bridal vision and style.</p>
+
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="pricing-header">
+        <h4>Bridal Aura</h4>
+        <p>Hands & Feet | Full Package</p>
+      </div>
+      <div class="pricing-body">
+        <div class="price">৳6000</div>
+        <span class="subprice">৳5000 (Hands Only)</span>
+        <ul class="features">
+          <li><i class="fa-solid fa-feather"></i> Intricate full-hand detailing</li>
+          <li><i class="fa-solid fa-crown"></i> Custom bridal motif design</li>
+          <li><i class="fa-solid fa-clock"></i> 2–3 hour session</li>
+        </ul>
+      </div>
+      <a href="contact.html?package=Bridal%20Aura" class="btn book-btn">Book Now</a>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-header">
+        <h4>Sajawat</h4>
+        <p>Only Hands | Full Package</p>
+      </div>
+      <div class="pricing-body">
+        <div class="price">৳5000</div>
+        <ul class="features">
+          <li><i class="fa-solid fa-flower"></i> Traditional floral design</li>
+          <li><i class="fa-solid fa-heart"></i> Elegant and minimal style</li>
+          <li><i class="fa-solid fa-clock"></i> 2-hour session</li>
+        </ul>
+      </div>
+      <a href="contact.html?package=Sajawat" class="btn book-btn">Book Now</a>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-header">
+        <h4>Vine Mandala</h4>
+        <p>Only Hands | Full Package</p>
+      </div>
+      <div class="pricing-body">
+        <div class="price">৳4000</div>
+        <ul class="features">
+          <li><i class="fa-solid fa-circle-notch"></i> Mandala & vine fusion</li>
+          <li><i class="fa-solid fa-leaf"></i> Modern artistic layout</li>
+          <li><i class="fa-solid fa-clock"></i> 1.5-hour session</li>
+        </ul>
+      </div>
+      <a href="contact.html?package=Vine%20Mandala" class="btn book-btn">Book Now</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="close" onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+  <h2 id="lightbox-title"></h2>
+  <p id="lightbox-desc"></p>
+</div>
+  <!-- Booking CTA -->
+  <section class="container">
+    <div class="booking-cta">
+      <div class="left">
+        <h3>Reserve a Bridal Session</h3>
+        <p>Secure your bridal date — request a booking and we will reply with availability, pricing options and trial details.</p>
+        <div class="features">
+          <div class="feature">Personalized motifs</div>
+          <div class="feature">On-site team</div>
+          <div class="feature">Trial appointments</div>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="contact.html?package=Bridal%20Aura">Request to Book</a>
+      </div>
+    </div>
+  </section>
+
+<footer class="site-footer">
+    <div class="footer-top container">
+      <div class="footer-col">
+        <h4>Additional Links</h4>
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Henna#Black_henna">Learn about black henna</a></li>
+          <li><a href="https://www.facebook.com/share/1BNhRHq2Fv/">Read more testimonials</a></li>
+          <li><a href="#">How do I take care of my henna?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col center-logo">
+        <img src="assets/images/logo black.png" alt="logo" class="logo-footer">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/1BNhRHq2Fv/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/jerins_mehendi_art?igsh=MXVxdG0wYTRteTBtNQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/yourpage" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://twitter.com/yourpage" target="_blank"><i class="fab fa-linkedin"></i></a>
+       </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Contact</h4>
+        <p><i class="fa-solid fa-location-dot"></i> Tangail, Dhaka, Bangladesh</p>
+        <p><i class="fa-solid fa-phone"></i> +8801874556527</p>
+        <p><i class="fa-solid fa-envelope"></i> jerinsmehendiart@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Jerin’s Mehendi Art</p>
+    </div>
+  </footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
